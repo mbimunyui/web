@@ -128,7 +128,7 @@ then
 
                 echo "net-tools installed successfully"
                 echo ""
-                echo "Installation Completed"
+                echo "Installation Completed, we are goot to go"
                                 sleep 3
             else
                 echo "net-tools failled to installed"
