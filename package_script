@@ -1,0 +1,142 @@
+#this line is the command to extract the type of os running
+#type=$(cat /etc/os-release | grep ID_LIKE | awk -F= '{print $2}')
+
+#!/bin/bash
+ #Author : Utrains
+    #Date : 01-Nov-2021
+
+## ---------- script that Install some packages in Linux -----------------
+clear
+if [ $USER = root ]
+then
+        echo -e "You are about to install the following  packages:\n finger \n curl \n zip \n vim \n net-tools \n sysstat "
+        echo""
+        sleep 3
+        echo -e "which environment are you installing in\n type [u] for ubuntu or any debian distribution,  
+\n  type [r] for Redhat or any fedora distribution"
+                read flavor
+    if [ $flavor = u ]
+    then
+                #installing finger
+                        echo "installing finger....."
+                        sleep 3
+            apt install finger -y
+            if [ $? -eq 0 ]
+            then
+                                clear
+
+                echo "finger installed successfully"
+                                sleep 3
+            else
+                echo "finger failled to installed"
+                echo -e  "your selection is to install on ubuntu or debian \n ensure that you are running in a Debian environment if not re-run the script and make the right selection"
+        sleep 10
+		exit 1
+         fi
+                #installing curl
+                clear
+                echo "installing curl...."
+                sleep 3
+                apt install curl -y
+            if [ $? -eq 0 ]
+            then
+                clear
+
+                echo "curl installed successfully"
+                                sleep 3
+            else
+                echo "curl failled to installed"
+             fi
+                        #installing zip
+                        clear
+                        echo "installing zip...."
+                        sleep 3
+                        apt install zip -y
+            if [ $? -eq 0 ]
+            then
+                                clear
+
+                echo "zip installed successfully"
+                                sleep 3
+            else
+                echo "zip failled to installed"
+                        fi
+                #installing net-tools
+                clear
+                echo "installing net-tools...."
+                apt install net-tools -y
+            if [ $? -eq 0 ]
+            then
+                                clear
+
+                echo "net-tools installed successfully"
+                                sleep 3
+            else
+                echo "net-tools failled to installed"
+                        fi
+
+        elif [ $flavor = r ]
+                then
+                #installing finger
+                        echo "installing finger....."
+                        sleep 3
+            yum install finger -y
+            if [ $? -eq 0 ]
+            then
+                                clear
+
+                echo "finger installed successfully"
+                                sleep 3
+            else
+                echo "finger failled to installed"
+                        fi
+                #installing curl
+                clear
+                echo "installing curl...."
+                sleep 3
+                yum install cur -y
+            if [ $? -eq 0 ]
+            then
+                                clear
+
+                echo "curl installed successfully"
+                                sleep 3
+            else
+                echo "curl failled to installed"
+                        fi
+                        #installing zip
+                        clear
+                        echo "installing zip...."
+                        sleep 3
+                        yum install zip -y
+            if [ $? -eq 0 ]
+            then
+                                clear
+
+                echo "zip installed successfully"
+                                sleep 3
+            else
+                echo "zip failled to installed"
+                        fi
+                #installing net-tools
+                clear
+                echo "installing net-tools...."
+                yum install net-tools -y
+            if [ $? -eq 0 ]
+            then
+                                clear
+
+                echo "net-tools installed successfully"
+                echo ""
+                echo "Installation Completed, we are goot to go"
+                                sleep 3
+            else
+                echo "net-tools failled to installed"
+                
+                        fi
+        else
+                echo " you make a wrong selection"
+        fi
+else
+        echo "You are not a root user, this issue will be reported"
+fi
