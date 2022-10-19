@@ -127,9 +127,12 @@ then
                                 clear
 
                 echo "net-tools installed successfully"
+                echo ""
+                echo "Installation Completed"
                                 sleep 3
             else
                 echo "net-tools failled to installed"
+                
                         fi
         else
                 echo " you make a wrong selection"
